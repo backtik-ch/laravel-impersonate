@@ -28,6 +28,7 @@ class ImpersonateServiceProvider extends ServiceProvider
     {
         $this->publishConfig();
         $this->publishMigrations();
+        $this->publishViews();
         $this->loadRoutes();
         $this->registerMiddlewareAlias();
     }
@@ -50,6 +51,18 @@ class ImpersonateServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../database/migrations/' => database_path('migrations'),
         ], 'impersonate-migrations');
+    }
+
+    /**
+     * Load and publish the package views.
+     */
+    protected function publishViews(): void
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'impersonate');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/impersonate'),
+        ], 'impersonate-views');
     }
 
     /**

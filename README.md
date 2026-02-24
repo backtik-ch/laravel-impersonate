@@ -233,6 +233,30 @@ const impersonating = computed(() => page.props.impersonating);
 </template>
 ```
 
+## Blade Banner (Optional)
+
+The package ships a minimal Blade banner view you can include in any layout. It only renders when impersonation is active.
+
+### Quick include
+
+Add this to your Blade layout, typically at the top of `<body>`:
+
+```blade
+@include('impersonate::banner')
+```
+
+### Customize the view
+
+Publish the view to your app for full control over markup and styling:
+
+```bash
+php artisan vendor:publish --tag=impersonate-views
+```
+
+This copies the banner to `resources/views/vendor/impersonate/banner.blade.php` where you can edit it freely.
+
+> **Using Inertia/Vue?** Skip this and build your own component using the shared `impersonating` page props instead (see [Inertia.js Integration](#inertiajs-integration) above).
+
 ## Optional User Model Trait
 
 Add the `CanBeImpersonated` trait to your User model for convenience methods:
