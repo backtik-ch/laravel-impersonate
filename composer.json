@@ -1,11 +1,25 @@
 {
     "name": "backtik/laravel-impersonate",
-    "description": "Session-based user impersonation for Laravel 12+",
+    "description": "Session-based user impersonation",
     "type": "library",
     "license": "MIT",
+    "version": "1.0.0",
+    "time": "2026-02-24",
+    "keywords": [
+        "laravel",
+        "impersonate",
+        "impersonation",
+        "switch user",
+        "masquerade"
+    ],
     "autoload": {
         "psr-4": {
             "Backtik\\Impersonate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Backtik\\Impersonate\\Tests\\": "tests/"
         }
     },
     "require": {
@@ -14,11 +28,24 @@
         "illuminate/auth": "^12.0",
         "illuminate/session": "^12.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Backtik\\Impersonate\\ImpersonateServiceProvider"
             ]
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
