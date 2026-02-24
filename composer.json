@@ -1,0 +1,24 @@
+{
+    "name": "backtik/laravel-impersonate",
+    "description": "Session-based user impersonation for Laravel 12+",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Backtik\\Impersonate\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^12.0",
+        "illuminate/auth": "^12.0",
+        "illuminate/session": "^12.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Backtik\\Impersonate\\ImpersonateServiceProvider"
+            ]
+        }
+    }
+}
