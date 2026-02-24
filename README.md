@@ -25,6 +25,7 @@ You might need to add the repository as it's a private repository :
         }
     ]
 }
+```
 
 ### Via path repository (local development)
 
