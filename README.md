@@ -14,6 +14,17 @@ Session-based user impersonation for Laravel 12+. Allows administrators to sign 
 ```bash
 composer require backtik/laravel-impersonate
 ```
+You might need to add the repository as it's a private repository : 
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:backtik-ch/laravel-impersonate.git"
+        }
+    ]
+}
 
 ### Via path repository (local development)
 
